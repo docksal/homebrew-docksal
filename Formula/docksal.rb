@@ -18,9 +18,8 @@ class Docksal < Formula
 
   def install
     global_config = "~/.docksal2/docksal.env"
-    dir = File.dirname(global_config)
-    system "mkdir" "#{dir}"
-    system "touch" "#{global_config}"
+    mkdir "~/.docksal2"
+    touch "#{global_config}"
 
     bin.install "bin/fin"
   end
