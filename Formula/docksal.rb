@@ -5,6 +5,10 @@ class Docksal < Formula
   sha256 "0051a447417d5413efdcb650c387b40cc31b5b4416bdf95e19c6fe0fe3784c9d"
   license "MIT"
 
+  livecheck do
+    url "https://github.com/docksal/docksal/releases/latest"
+    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+  end
 
   on_linux do
     depends_on "curl"
@@ -13,11 +17,17 @@ class Docksal < Formula
   uses_from_macos "curl"
 
   def install
-    
+    global_config = "~/.docksal/docksal.env"
+    dir = File.dirname(global_config)
+    mkdir "#{dir}"
+    touch "#{global_config}"
+
+    #bin.install "bin/fin"
+    echo "Test Installed"
   end
 
   test do
-    system "fin" "-h"
+    system "#{bin}/fin" "--version"
   end
 
 end
