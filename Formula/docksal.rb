@@ -17,13 +17,13 @@ class Docksal < Formula
   uses_from_macos "curl"
 
   def install
-    global_config = "~/.docksal/docksal.env"
+    global_config = "~/.docksal2/docksal.env"
     dir = File.dirname(global_config)
     mkdir "#{dir}"
     touch "#{global_config}"
 
     #bin.install "bin/fin"
-    echo "Test Installed"
+    #echo "Test Installed"
   end
 
   test do
