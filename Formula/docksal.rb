@@ -5,8 +5,14 @@ class Docksal < Formula
   sha256 "0051a447417d5413efdcb650c387b40cc31b5b4416bdf95e19c6fe0fe3784c9d"
   license "MIT"
 
-  depends_on "curl"
-  uses_from_macos "curl"
+
+  on_linux do
+    depends_on "curl"
+  end
+
+  on_macos do
+    uses_from_macos "curl"
+  end
 
   def install
     
