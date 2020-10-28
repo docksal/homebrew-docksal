@@ -10,9 +10,7 @@ class Docksal < Formula
     depends_on "curl"
   end
 
-  on_macos do
-    uses_from_macos "curl"
-  end
+  uses_from_macos "curl"
 
   def install
     
