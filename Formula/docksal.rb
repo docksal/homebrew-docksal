@@ -17,7 +17,9 @@ class Docksal < Formula
   end
 
   def install
+    system "printenv"
     homeDirectory = Dir.home()
+    system "echo #{homeDirectory}"
     global_config = "#{homeDirectory}.docksal2/docksal.env"
     mkdir "#{homeDirectory}/.docksal2"
     touch "#{global_config}"
