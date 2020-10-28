@@ -17,7 +17,7 @@ class Docksal < Formula
   end
 
   def install
-    homeDirectory = Dir.home
+    homeDirectory = Dir.home()
     global_config = "#{homeDirectory}.docksal2/docksal.env"
     mkdir "#{homeDirectory}/.docksal2"
     touch "#{global_config}"
