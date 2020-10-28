@@ -10,11 +10,11 @@ class Docksal < Formula
     regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
+  uses_from_macos "curl"
+
   on_linux do
     depends_on "curl"
   end
-
-  uses_from_macos "curl"
 
   def install
     global_config = "${{env "HOME"}}/.docksal2/docksal.env"
@@ -27,5 +27,4 @@ class Docksal < Formula
   test do
     system "#{bin}/fin" "--version"
   end
-
 end
