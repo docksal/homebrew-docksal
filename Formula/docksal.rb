@@ -17,8 +17,8 @@ class Docksal < Formula
   end
 
   def install
-    global_config = "${{env "HOME"}}/.docksal2/docksal.env"
-    mkdir "{{env "HOME"}}/.docksal2"
+    global_config = "#{ENV["HOME"]}/.docksal2/docksal.env"
+    mkdir "#{ENV["HOME"]}/.docksal2"
     touch "#{global_config}"
 
     bin.install "bin/fin"
