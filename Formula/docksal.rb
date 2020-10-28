@@ -17,8 +17,8 @@ class Docksal < Formula
   uses_from_macos "curl"
 
   def install
-    global_config = "~/.docksal2/docksal.env"
-    mkdir "~/.docksal2"
+    global_config = "${{env "HOME"}}/.docksal2/docksal.env"
+    mkdir "{{env "HOME"}}/.docksal2"
     touch "#{global_config}"
 
     bin.install "bin/fin"
